@@ -28,7 +28,7 @@ describe('app', function () {
         this.context.querySelector('#result').textContent.should.equal('');
       });
 
-      describe('clicking', function () {
+      describe('click', function () {
         beforeEach(function () {
           this.context.querySelector('#a').value = '7';
           this.context.querySelector('#b').value = '9';

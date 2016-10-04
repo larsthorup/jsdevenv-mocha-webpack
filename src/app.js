@@ -13,7 +13,7 @@ function render(context) {
     var b = parseInt(context.querySelector('#b').value);
     var result = calc.add(a, b);
     context.querySelector('#result').textContent = result;
-  })
+  });
 }
 
 module.exports = {
