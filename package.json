@@ -1,0 +1,45 @@
+{
+  "name": "jsdevenv-mocha-webpack",
+  "version": "0.1.0",
+  "description": "vanilla javascript bundled with webpack and tested with eslint, mocha, karma and istanbul",
+  "scripts": {
+    "lint": "eslint .",
+    "test:node": "mocha",
+    "cover:node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha",
+    "test:chrome": "karma start test/karma.conf.js --browsers Chrome --single-run",
+    "test:debug": "karma start test/karma.conf.js --browsers Chrome",
+    "build": "webpack --hide-modules",
+    "build:test": "webpack --hide-modules --config test/webpack.test.config.js",
+    "test": "npm run lint && npm run cover:node && npm run build && npm run build:test && npm run test:chrome",
+    "test:travis": "npm run lint && npm run cover:node && npm run build",
+    "watch": "webpack-dev-server",
+    "coveralls": "coveralls < output/coverage/lcov.info",
+    "travis": "npm run test:travis && npm run coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsthorup/jsdevenv-mocha-webpack.git"
+  },
+  "author": "Lars Thorup <lars@zealake.com> (http://github.com/larsthorup)",
+  "license": "MIT",
+  "homepage": "https://github.com/larsthorup/jsdevenv-mocha-webpack#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "clean-webpack-plugin": "^0.1.9",
+    "coveralls": "^2.11.9",
+    "fetch-mock": "^5.0.3",
+    "html-webpack-plugin": "^2.16.0",
+    "istanbul": "^0.4.3",
+    "karma": "^1.1.2",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.1.1",
+    "mocha": "^2.4.5",
+    "rimraf": "^2.5.2",
+    "semistandard": "^8.0.0",
+    "sinon": "^2.0.0-pre",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {}
+}
