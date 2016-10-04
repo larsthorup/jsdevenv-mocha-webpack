@@ -6,7 +6,7 @@ describe('app', function () {
       it('should greet the world', function () {
         var context = {};
         app.render(context);
-        context.innerHTML.should.equal('<span>Hello World :)</span>');
+        context.innerHTML.should.equal('<span>Hey! 4 + 7 = 11</span>');
       });
     });
 
@@ -17,7 +17,7 @@ describe('app', function () {
 
       it('should greet the world', function () {
         app.render(this.context);
-        this.context.innerHTML.should.equal('<span>Hello World :)</span>');
+        this.context.innerHTML.should.equal('<span>Hey! 4 + 7 = 11</span>');
       });
     });
   });
