@@ -9,7 +9,9 @@ function adding (a, b) {
 }
 
 function addSlow (a, b, cb) {
-  cb(a + b);
+  window.setTimeout(function () {
+    cb(a + b)
+  }, 1000);
 }
 
 function divide (a, b) {

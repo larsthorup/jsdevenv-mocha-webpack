@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "test:node": "mocha",
+    "watch:node": "mocha -w",
     "cover:node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha",
     "test:chrome": "karma start test/karma.conf.js --browsers Chrome --single-run",
     "test:debug": "karma start test/karma.conf.js --browsers Chrome",

@@ -6,7 +6,9 @@ describe('app', function () {
     describe('isomorphic', function () {
       it('should render the dialog', function () {
         var context = {
-          querySelector: sinon.stub().returns({addEventListener: sinon.spy()})
+          querySelector: sinon.stub().returns({
+            addEventListener: sinon.spy()
+          })
         };
         app.render(context);
         context.innerHTML.should.have.string('<p id="result"></p>');

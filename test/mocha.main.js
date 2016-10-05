@@ -5,6 +5,7 @@ chai.should();
 if (typeof window === 'undefined') {
   global.window = {
     isFake: true,
+    setTimeout: global.setTimeout,
     location: {}
   };
 }

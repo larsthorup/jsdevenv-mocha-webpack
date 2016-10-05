@@ -1,3 +1,4 @@
+var sinon = require('sinon');
 var calc = require('./calc');
 
 describe('calc', function () {
@@ -26,11 +27,36 @@ describe('calc', function () {
   });
 
   describe('addSlow', function () {
+    beforeEach(function () {
+      var fakeTimeout = function (code, timeout) { code(); };
+      sinon.stub(window, 'setTimeout', fakeTimeout);
+    });
+
+    it('should eventually sum 2 and 3 to 5', function (done) {
+      calc.addSlow(2, 3, function (result) {
+        result.should.equal(5);
+        window.setTimeout.getCall(0).args[1].should.equal(1000);
+        done();
+      });
+    });
+  });
+
+  describe('addSlow - sinon', function () {
+    beforeEach(function () {
+      this.sinon = sinon.sandbox.create();
+      this.sinon.useFakeTimers();
+    });
+
+    afterEach(function () {
+      this.sinon.restore();
+    });
+
     it('should eventually sum 2 and 3 to 5', function (done) {
       calc.addSlow(2, 3, function (result) {
         result.should.equal(5);
         done();
       });
+      this.sinon.clock.tick(1500);
     });
   });
 
