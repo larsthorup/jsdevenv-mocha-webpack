@@ -1,18 +1,18 @@
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
     './test/karma-webpack.main.js'
   ],
   output: {
-    path: './output/test',
+    path: path.resolve(process.cwd(), './output/test'),
     publicPath: '/',
     filename: 'karma-webpack.js'
   },
   module: {
-    loaders: [
-    ]
   },
+  mode: 'development',
   devtool: 'source-map',
   plugins: [
   ],

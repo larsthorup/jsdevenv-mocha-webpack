@@ -29,7 +29,7 @@ describe('calc', function () {
   describe('addSlow', function () {
     beforeEach(function () {
       var fakeTimeout = function (code, timeout) { code(); };
-      sinon.stub(window, 'setTimeout', fakeTimeout);
+      sinon.stub(window, 'setTimeout').callsFake(fakeTimeout);
     });
 
     it('should eventually sum 2 and 3 to 5', function (done) {
@@ -43,7 +43,7 @@ describe('calc', function () {
 
   describe('addSlow - sinon', function () {
     beforeEach(function () {
-      this.sinon = sinon.sandbox.create();
+      this.sinon = sinon.createSandbox();
       this.sinon.useFakeTimers();
     });
 

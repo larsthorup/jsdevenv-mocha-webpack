@@ -1,21 +1,23 @@
-var webpack = require('webpack');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
     './src/main.js'
   ],
   output: {
-    path: './output/build',
+    path: path.resolve(process.cwd(), './output/build'),
     publicPath: '/',
     filename: '[name]-[hash].js'
   },
   module: {
   },
+  mode: 'development',
   devtool: 'source-map',
   plugins: [
-    new CleanWebpackPlugin('output/build'),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       deps: {

@@ -5,15 +5,13 @@ module.exports = {
       'src/**/*.test.js'
     ]
   },
-  reporting: {
-    print: 'none',
-    dir: './output/cover',
-    reports: [
-      'lcov',
-      'json',
-      'text-summary'
-    ]
-  },
+  'report-dir': './output/coverage',
+  reporter: [
+    'lcov',
+    'json',
+    'text-summary'
+  ],
+  'temp-dir': './output/coverage',
   check: {
     global: {
       statements: 75 /* percent */
