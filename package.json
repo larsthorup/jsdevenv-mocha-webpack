@@ -14,7 +14,7 @@
     "test": "npm run lint && npm run cover:node && npm run build && npm run build:test && npm run test:chrome",
     "test:travis": "npm run lint && npm run cover:node && npm run build",
     "watch": "webpack-dev-server",
-    "coveralls": "coveralls < output/cover/lcov.info",
+    "coveralls": "coveralls < output/coverage/lcov.info",
     "travis": "npm run test:travis && npm run coveralls"
   },
   "repository": {
