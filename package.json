@@ -37,8 +37,8 @@
     "mocha": "^7.2.0",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
-    "semistandard": "^14.2.3",
-    "sinon": "^9.0.2",
+    "semistandard": "^16.0.1",
+    "sinon": "^13.0.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
